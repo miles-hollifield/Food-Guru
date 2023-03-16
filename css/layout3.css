@@ -1,0 +1,121 @@
+/*********
+Main Grid
+**********/
+main {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto auto auto;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+#specialties {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+#signup {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+/************
+Classes Grid
+*************/
+#classes {
+  display: grid;
+  grid-column: 2 span;
+  grid-gap: 10px;
+  grid-row: 2/3;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto auto;
+}
+
+#classes header {
+  grid-column: 4 span;
+  grid-row: 1/2;
+}
+
+/************
+Founder Grid
+*************/
+#founder {
+  display: grid;
+  grid-column: 2 span;
+  grid-gap: 10px;
+  grid-row: 3/4;
+  grid-template-columns: 2fr auto;
+  grid-template-rows: auto;
+}
+
+/****************
+Testimonials Grid
+*****************/
+#testimonials {
+  display: grid;
+  grid-column: 2 span;
+  grid-gap: 10px;
+  grid-row: 4/5;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+}
+
+#testimonials header {
+  grid-column: 3 span;
+  grid-row: 1/2;
+}
+
+/*************************
+Media Queries and Support
+**************************/
+@media screen and (max-width:850px) {
+  /************
+  Classes Grid
+  *************/
+  #classes {
+    grid-template-columns: 2fr auto;
+    grid-template-rows: auto auto auto auto auto;
+    margin: 0 auto;
+  }
+
+  #classes header {
+    grid-column: 2 span;
+  }
+
+  /************
+  Founder Grid
+  *************/
+  #founder {
+    display: block;
+  }
+
+  /****************
+  Testimonials Grid
+  *****************/
+  #testimonials {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+
+  #testimonials header {
+    grid-column: 2 span;
+    margin: 0 auto;
+  }
+  
+  #testimonials div:last-of-type {
+    grid-column: 2 span;
+    grid-row: 3/4;
+  }
+}
+
+@media screen and (max-width:576px) {
+  /*********
+  Main Grid
+  **********/
+  main,
+  #classes,
+  #testimonials {
+    display: block;
+  }
+}
